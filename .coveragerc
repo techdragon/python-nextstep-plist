@@ -1,0 +1,16 @@
+[paths]
+source =
+   src/nextstep_plist
+   */site-packages/nextstep_plist
+
+[run]
+branch = true
+source =
+    nextstep_plist
+    tests
+parallel = true
+
+[report]
+show_missing = true
+precision = 2
+omit = *migrations*
