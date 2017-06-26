@@ -26,8 +26,7 @@ def py_make_scanner(context):
         if nextchar == '"':
             return parse_string(string, idx + 1, encoding)
         elif nextchar == '{':
-            return parse_dictionary((string, idx + 1), encoding, _scan_once,
-                _scan_name)
+            return parse_dictionary((string, idx + 1), encoding, _scan_once, _scan_name)
         elif nextchar == '(':
             return parse_array((string, idx + 1), _scan_once, _scan_name)
         elif nextchar == '<':
@@ -55,5 +54,6 @@ def py_make_scanner(context):
             raise StopIteration
 
     return _scan_once
+
 
 make_scanner = py_make_scanner

@@ -1,16 +1,15 @@
 """Implementation of PListDecoder
 """
+import binascii
 import re
 import sys
-import binascii
 
+from nextstep_plist.scanner import make_scanner
 
 if sys.version_info > (2,):
     unicode = str
     unichr = chr
 
-
-from nextstep_plist.scanner import make_scanner
 
 __all__ = ['PListDecoder']
 
@@ -110,6 +109,7 @@ def py_scanstring(s, end, encoding=None, _m=STRINGCHUNK.match):
         # Append the unescaped character
         _append(char)
     return u''.join(chunks), end
+
 
 scanstring = py_scanstring
 

@@ -1,10 +1,10 @@
+from nextstep_plist.decoder import PListDecoder
+
 __version__ = "0.1.0"
 __all__ = [
     'load', 'loads',
     'PListDecoder',
 ]
-
-from nextstep_plist.decoder import PListDecoder
 
 
 _default_decoder = PListDecoder()
